@@ -1,6 +1,6 @@
 package codeClanCars;
 
-import codeClanCars.vehicles.Car;
+import codeClanCars.people.Customer;
 import codeClanCars.vehicles.Vehicle;
 
 import java.util.ArrayList;
@@ -26,5 +26,19 @@ public class Dealership {
 
     public void addVehicle(Vehicle vehicle) {
         this.vehiclesStocked.add(vehicle);
+        vehicle.addDealership(this);
+    }
+
+    public ArrayList removeVehicleFromDealership(Vehicle vehicle) {
+        this.vehiclesStocked.remove(vehicle);
+                return vehiclesStocked;
+    }
+
+    public void addMoneyToTill(Vehicle vehicle){
+        this.till += vehicle.getPrice();
+    }
+
+    public void removeMoneyFromTill(Vehicle vehicle) {
+        this.till -= vehicle.getPrice();
     }
 }

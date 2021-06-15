@@ -22,7 +22,7 @@ public class DealershipTest {
     }
 
     @Test
-    public void vehiclesStockedStarts() {
+    public void vehicleStockStartsAt0() {
         assertEquals(0, dealership.getNumberOfVehiclesStocked());
     }
 
@@ -30,5 +30,25 @@ public class DealershipTest {
     public void canAddVehiclesToStock() {
         dealership.addVehicle(car);
         assertEquals(1, dealership.getNumberOfVehiclesStocked());
+    }
+
+    @Test
+    public void canRemoveVehicleFromStock() {
+        dealership.addVehicle(car);
+        dealership.removeVehicleFromDealership(car);
+        assertEquals(0, dealership.getNumberOfVehiclesStocked());
+    }
+
+    @Test
+    public void moneyIsDeductedFromTill() {
+        dealership.removeMoneyFromTill(car);
+        assertEquals(970000, dealership.getTillCount());
+    }
+
+    @Test
+    public void moneyIsAddedToTill() {
+        dealership.addMoneyToTill(car);
+        assertEquals(1030000, dealership.getTillCount());
+
     }
 }
