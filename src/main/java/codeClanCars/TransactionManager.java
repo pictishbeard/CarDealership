@@ -1,21 +1,22 @@
 package codeClanCars;
 
+import codeClanCars.people.Customer;
 import codeClanCars.vehicles.Vehicle;
 
 public class TransactionManager {
 
+    private Vehicle vehicle;
+    private Customer customer;
+
     public TransactionManager(){
-
     }
 
-    public void transactVehicleSale(Vehicle vehicle) {
-        // remove from stock
+    public void transactVehicleSale(Vehicle vehicle, Customer customer) {
+        Dealership dealership = vehicle.getDealership();
         dealership.removeVehicleFromDealership(vehicle);
-        // add money to till
-        // add to customer owned vehicles
-        // remove from customer money
-
+        dealership.addMoneyToTill(vehicle);
+        customer.addCarToCollection(vehicle);
+        customer.buyCar(vehicle);
     }
 
-    public void transactVehicle
 }

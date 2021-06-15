@@ -1,6 +1,5 @@
 package codeClanCars;
 
-import codeClanCars.people.Customer;
 import codeClanCars.vehicles.Vehicle;
 
 import java.util.ArrayList;

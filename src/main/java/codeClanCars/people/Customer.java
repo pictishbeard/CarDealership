@@ -13,7 +13,6 @@ public class Customer {
     public Customer (int money) {
         this.vehiclesOwned = new ArrayList<>();
         this.money = money;
-
     }
 
     public int getTotalMoney() {
@@ -24,12 +23,12 @@ public class Customer {
         return this.vehiclesOwned.size();
     }
 
-    public void buyCar(Car car) {
-        this.money -= car.getPrice();
+    public void buyCar(Vehicle vehicle) {
+        this.money -= vehicle.getPrice();
     }
 
-    public ArrayList addCarToCollection(Car car) {
-        this.vehiclesOwned.add(car);
+    public ArrayList addCarToCollection(Vehicle vehicle) {
+        this.vehiclesOwned.add(vehicle);
         return vehiclesOwned;
     }
 }
