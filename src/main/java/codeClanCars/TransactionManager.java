@@ -5,9 +5,6 @@ import codeClanCars.vehicles.Vehicle;
 
 public class TransactionManager {
 
-    private Vehicle vehicle;
-    private Customer customer;
-
     public TransactionManager(){
     }
 
